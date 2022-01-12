@@ -2,9 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.mycompany.cajero_cliente;
+package vista;
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,6 +19,7 @@ public class Log_in extends javax.swing.JFrame {
     public Log_in() {
         initComponents();        
         logo.setIcon(new ImageIcon("..\\Cajero_Cliente\\Imagenes\\logo.png"));
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -33,13 +35,13 @@ public class Log_in extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         numeroTarjeta = new javax.swing.JLabel();
         fechaCaducidad = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        cvs = new javax.swing.JLabel();
         pin = new javax.swing.JLabel();
         numeroTarjeta_TextField = new javax.swing.JTextField();
         fechaCaducidad_TextField = new javax.swing.JTextField();
         cvs_TextField = new javax.swing.JTextField();
         pin_pass = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        identificar_button = new javax.swing.JButton();
         logo = new javax.swing.JLabel();
         fecha = new javax.swing.JLabel();
         hora = new javax.swing.JLabel();
@@ -58,9 +60,9 @@ public class Log_in extends javax.swing.JFrame {
         fechaCaducidad.setForeground(new java.awt.Color(0, 0, 0));
         fechaCaducidad.setText("Fecha caducidad");
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("CVS");
+        cvs.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        cvs.setForeground(new java.awt.Color(0, 0, 0));
+        cvs.setText("CVS");
 
         pin.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         pin.setForeground(new java.awt.Color(0, 0, 0));
@@ -80,7 +82,12 @@ public class Log_in extends javax.swing.JFrame {
 
         pin_pass.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton1.setText("IDENTIFICAR");
+        identificar_button.setText("IDENTIFICAR");
+        identificar_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                identificar_buttonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -99,7 +106,7 @@ public class Log_in extends javax.swing.JFrame {
                             .addComponent(fechaCaducidad_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(152, 152, 152)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cvs, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(pin, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(36, 36, 36)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,7 +114,7 @@ public class Log_in extends javax.swing.JFrame {
                             .addComponent(cvs_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(100, 100, 100))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(identificar_button, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(14, 14, 14))))
         );
         jPanel2Layout.setVerticalGroup(
@@ -116,7 +123,7 @@ public class Log_in extends javax.swing.JFrame {
                 .addGap(49, 49, 49)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(numeroTarjeta)
-                    .addComponent(jLabel2)
+                    .addComponent(cvs)
                     .addComponent(numeroTarjeta_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cvs_TextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
@@ -126,7 +133,7 @@ public class Log_in extends javax.swing.JFrame {
                     .addComponent(pin)
                     .addComponent(pin_pass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(identificar_button)
                 .addContainerGap())
         );
 
@@ -187,6 +194,12 @@ public class Log_in extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_fechaCaducidad_TextFieldActionPerformed
 
+    private void identificar_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_identificar_buttonActionPerformed
+        if(numeroTarjeta_TextField.getText().equals("") || fechaCaducidad_TextField.getText().equals("") || cvs_TextField.getText().equals("") || pin_pass.getText().equals("")){
+            JOptionPane.showMessageDialog(null, " Rellena todos los campos para poder iniciar sesión");
+        }
+    }//GEN-LAST:event_identificar_buttonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -223,13 +236,13 @@ public class Log_in extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel cvs;
     private javax.swing.JTextField cvs_TextField;
     private javax.swing.JLabel fecha;
     private javax.swing.JLabel fechaCaducidad;
     private javax.swing.JTextField fechaCaducidad_TextField;
     private javax.swing.JLabel hora;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton identificar_button;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel logo;

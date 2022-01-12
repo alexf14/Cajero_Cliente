@@ -10,13 +10,13 @@ public class Conector {
 
     private Connection conexion;
     
-    public Connection Conectar() {
+    public Connection conectar() {
         try {
             String url, usuario, contra;
-            try (InputStream is = new FileInputStream("..\\src\\main\\java\\com\\mycompany\\cajero_cliente\\base.properties")) {
+            try (InputStream is = new FileInputStream("C:\\Users\\alexf\\OneDrive\\Documentos\\NetBeansProjects\\Cajero_Cliente\\base.properties")) {
                 Properties propiedad = new Properties();
                 propiedad.load(is);
-                url = propiedad.getProperty("base.url") + "?autoReconnect=truesusesSL=false";
+                url = propiedad.getProperty("base.url");
                 usuario = propiedad.getProperty("base.usuario");
                 contra = propiedad.getProperty("base.contra");
             }
