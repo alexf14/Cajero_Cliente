@@ -1,4 +1,4 @@
-package com.mycompany.cajero_cliente;
+package codigo;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -13,7 +13,7 @@ public class Conector {
     public Connection conectar() {
         try {
             String url, usuario, contra;
-            try (InputStream is = new FileInputStream("C:\\Users\\alexf\\OneDrive\\Documentos\\NetBeansProjects\\Cajero_Cliente\\base.properties")) {
+            try (InputStream is = new FileInputStream("..\\Cajero_Cliente\\base.properties")) {
                 Properties propiedad = new Properties();
                 propiedad.load(is);
                 url = propiedad.getProperty("base.url");
@@ -21,9 +21,7 @@ public class Conector {
                 contra = propiedad.getProperty("base.contra");
             }
             Class.forName("com.mysql.jdbc.Driver");
-            System.out.println("Conectando...");
             conexion = DriverManager.getConnection(url, usuario, contra);
-            System.out.println("Conexión establecida...");
         } catch (IOException | ClassNotFoundException | SQLException e) {
             System.err.println("Error en la conexión debido a " + e.getMessage());       
         }

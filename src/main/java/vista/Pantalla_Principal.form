@@ -48,9 +48,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="reintegro" alignment="1" min="-2" pref="389" max="-2" attributes="0"/>
-                              <Component id="consultar" min="-2" pref="389" max="-2" attributes="0"/>
-                              <Component id="ingreso" alignment="1" min="-2" pref="389" max="-2" attributes="0"/>
+                              <Component id="buttonReintegro" alignment="1" min="-2" pref="389" max="-2" attributes="0"/>
+                              <Component id="buttonConsultar" min="-2" pref="389" max="-2" attributes="0"/>
+                              <Component id="buttonIngreso" alignment="1" min="-2" pref="389" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
                       </Group>
@@ -86,11 +86,11 @@
                   </Group>
                   <Component id="ultimaOperacion" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="78" max="32767" attributes="0"/>
-                  <Component id="consultar" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonConsultar" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                  <Component id="reintegro" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonReintegro" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                  <Component id="ingreso" min="-2" max="-2" attributes="0"/>
+                  <Component id="buttonIngreso" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -127,17 +127,17 @@
             <Property name="text" type="java.lang.String" value="ULTIIMA OPERACI&#xd3;N "/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="consultar">
+        <Component class="javax.swing.JButton" name="buttonConsultar">
           <Properties>
             <Property name="text" type="java.lang.String" value="CONSULTAR CAJERO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="reintegro">
+        <Component class="javax.swing.JButton" name="buttonReintegro">
           <Properties>
             <Property name="text" type="java.lang.String" value="REINTEGRO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="ingreso">
+        <Component class="javax.swing.JButton" name="buttonIngreso">
           <Properties>
             <Property name="text" type="java.lang.String" value="INGRESO"/>
           </Properties>

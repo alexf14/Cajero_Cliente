@@ -1,4 +1,4 @@
-package com.mycompany.cajero_cliente;
+package codigo;
 
 public class Main {
     

@@ -99,8 +99,8 @@
                               </Group>
                               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="numeroTarjeta_TextField" min="-2" pref="200" max="-2" attributes="0"/>
-                                  <Component id="fechaCaducidad_TextField" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="txtNumeroTarjeta" min="-2" pref="200" max="-2" attributes="0"/>
+                                  <Component id="txtFechaCaducidad" min="-2" pref="200" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="152" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -109,13 +109,13 @@
                               </Group>
                               <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="pin_pass" min="-2" pref="74" max="-2" attributes="0"/>
-                                  <Component id="cvs_TextField" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="pinPass" min="-2" pref="74" max="-2" attributes="0"/>
+                                  <Component id="txtCvs" min="-2" pref="74" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="identificar_button" min="-2" pref="100" max="-2" attributes="0"/>
+                              <Component id="identificar_button" min="-2" pref="119" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -129,15 +129,15 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="numeroTarjeta" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="cvs" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="numeroTarjeta_TextField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="cvs_TextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtNumeroTarjeta" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtCvs" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="54" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="fechaCaducidad" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="fechaCaducidad_TextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txtFechaCaducidad" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="pin" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="pin_pass" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="pinPass" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="68" max="32767" attributes="0"/>
                       <Component id="identificar_button" min="-2" max="-2" attributes="0"/>
@@ -192,31 +192,28 @@
                 <Property name="requestFocusEnabled" type="boolean" value="false"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="numeroTarjeta_TextField">
+            <Component class="javax.swing.JTextField" name="txtNumeroTarjeta">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="fechaCaducidad_TextField">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fechaCaducidad_TextFieldActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="cvs_TextField">
+            <Component class="javax.swing.JTextField" name="txtFechaCaducidad">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JPasswordField" name="pin_pass">
+            <Component class="javax.swing.JTextField" name="txtCvs">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JPasswordField" name="pinPass">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
