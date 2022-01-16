@@ -3,11 +3,12 @@ package codigo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import vista.Log_in;
 
 public class Tarjeta {
     public boolean validar(String num, String cvs, String pin, String fCad){
         Conector conector = new Conector();
-        
+
         boolean validado = false;
         String validacion = "select count(numero) from tarjeta where numero = '"+ num +"' and fecha_caducidad = '"+ fCad +"' and cvs = '"+ cvs +"' and pin = '"+ pin +"'";
         
@@ -32,11 +33,13 @@ public class Tarjeta {
         return validado;
     }
     
-    public float consultarSaldo (){
+    public float consultarSaldo (String tarjeta){
         Conector conector = new Conector();
+        Cuenta c = new Cuenta();
         float saldo=0;
         
-        String conocerSaldo = "select saldo from tarjeta where numero = '"+ saldo +"'";
+        String conocerSaldo = "select saldo from tarjeta inner join cuenta on cuenta.numero = tarjeta.numero_cuenta "
+                + "where tarjeta.numero = '"+ tarjeta +"'";
         
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -45,13 +48,13 @@ public class Tarjeta {
         try{
             ps = con.prepareStatement(conocerSaldo);
             rs = ps.executeQuery();
-            
             if(rs.next()){
                 saldo=rs.getFloat(1);
             }
         }catch(Exception e){
             System.out.println(e.getMessage());
         }
+        
         return saldo;
     }
 }

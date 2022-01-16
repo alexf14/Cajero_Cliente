@@ -1,16 +1,31 @@
 package vista;
 
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.TimerTask;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import java.util.Timer;
+import codigo.Cuenta;
 
 public class Log_in extends javax.swing.JFrame {
     codigo.Tarjeta t = new codigo.Tarjeta();
-    
+
     public Log_in() {
-        initComponents();        
+        initComponents();
+        setLocationRelativeTo(null);        
         logo.setIcon(new ImageIcon("..\\Cajero_Cliente\\Imagenes\\logo.png"));
-        setLocationRelativeTo(null);
+        
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("uuuu/MM/uuuu HH:mm:ss");   
+        Timer temporizador = new Timer();
+        temporizador.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                hora.setText(dtf.format(ZonedDateTime.now()));
+            }
+        },0, 1000);
     }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -28,7 +43,6 @@ public class Log_in extends javax.swing.JFrame {
         pinPass = new javax.swing.JPasswordField();
         identificar_button = new javax.swing.JButton();
         logo = new javax.swing.JLabel();
-        fecha = new javax.swing.JLabel();
         hora = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -119,9 +133,6 @@ public class Log_in extends javax.swing.JFrame {
 
         logo.setIcon(new ImageIcon("..\\Cajero_Cliente\\Imagenes\\logo.png"));
 
-        fecha.setForeground(new java.awt.Color(0, 0, 0));
-        fecha.setText("XX/XX/XX");
-
         hora.setForeground(new java.awt.Color(0, 0, 0));
         hora.setText("HH:MM:SS");
 
@@ -136,12 +147,10 @@ public class Log_in extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(34, 34, 34))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(fecha)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(logo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(hora)
-                        .addGap(182, 182, 182))))
+                        .addGap(95, 95, 95))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,7 +158,6 @@ public class Log_in extends javax.swing.JFrame {
                 .addContainerGap(35, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(logo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(fecha, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(hora, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -175,43 +183,17 @@ public class Log_in extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, " Rellena todos los campos para poder iniciar sesión");
         }else{
             if(t.validar(txtNumeroTarjeta.getText(), txtCvs.getText(), pinPass.getText(), txtFechaCaducidad.getText()) == true){
-                Pantalla_Principal p = new Pantalla_Principal();
+                Pantalla_Principal p = new Pantalla_Principal(txtNumeroTarjeta.getText());
                 p.setDefaultCloseOperation(p.EXIT_ON_CLOSE);
                 p.setVisible(true);
+                this.setVisible(false);
             }else{
                 JOptionPane.showMessageDialog(null, "Los datos introducidos no son válidos");
             }
-        }
+        }   
     }//GEN-LAST:event_identificar_buttonActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Log_in.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Log_in.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Log_in.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Log_in.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Log_in().setVisible(true);
@@ -221,7 +203,6 @@ public class Log_in extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cvs;
-    private javax.swing.JLabel fecha;
     private javax.swing.JLabel fechaCaducidad;
     private javax.swing.JLabel hora;
     private javax.swing.JButton identificar_button;

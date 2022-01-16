@@ -63,7 +63,7 @@
                           <EmptySpace min="-2" pref="292" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
-                          <Component id="jLabel4" min="-2" pref="246" max="-2" attributes="0"/>
+                          <Component id="saldo" min="-2" pref="246" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="313" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
@@ -86,7 +86,7 @@
                   <EmptySpace pref="45" max="32767" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jLabel4" min="-2" pref="62" max="-2" attributes="0"/>
+                  <Component id="saldo" min="-2" pref="62" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" pref="33" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
@@ -128,7 +128,7 @@
             <Property name="text" type="java.lang.String" value="El saldo actual es:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="saldo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="36" style="1"/>

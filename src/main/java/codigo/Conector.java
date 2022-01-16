@@ -20,7 +20,7 @@ public class Conector {
                 usuario = propiedad.getProperty("base.usuario");
                 contra = propiedad.getProperty("base.contra");
             }
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             conexion = DriverManager.getConnection(url, usuario, contra);
         } catch (IOException | ClassNotFoundException | SQLException e) {
             System.err.println("Error en la conexión debido a " + e.getMessage());       

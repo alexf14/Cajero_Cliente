@@ -3,11 +3,17 @@ package vista;
 import javax.swing.ImageIcon;
 
 public class Pantalla_Principal extends javax.swing.JFrame {
+    String tarjeta;
 
-    public Pantalla_Principal() {
+    public Pantalla_Principal(String tarjeta) {
+        this.tarjeta = tarjeta;
         initComponents();
         setLocationRelativeTo(null);
         logo.setIcon(new ImageIcon("..\\Cajero_Cliente\\Imagenes\\logoPequenno.png"));
+    }
+
+    private Pantalla_Principal() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @SuppressWarnings("unchecked")
@@ -38,6 +44,11 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         ultimaOperacion.setText("ULTIIMA OPERACIÓN ");
 
         buttonConsultar.setText("CONSULTAR CAJERO");
+        buttonConsultar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonConsultarActionPerformed(evt);
+            }
+        });
 
         buttonReintegro.setText("REINTEGRO");
 
@@ -102,8 +113,16 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buttonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConsultarActionPerformed
+        Consultar_Saldo c = new Consultar_Saldo(tarjeta);
+                c.setDefaultCloseOperation(c.EXIT_ON_CLOSE);
+                c.setVisible(true);
+                this.setVisible(false);
+    }//GEN-LAST:event_buttonConsultarActionPerformed
+
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Pantalla_Principal().setVisible(true);
             }
