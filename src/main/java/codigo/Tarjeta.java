@@ -3,9 +3,10 @@ package codigo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import vista.Log_in;
 
 public class Tarjeta {
+    Cuenta c = new Cuenta ();
+    
     public boolean validar(String num, String cvs, String pin, String fCad){
         Conector conector = new Conector();
 
@@ -33,28 +34,15 @@ public class Tarjeta {
         return validado;
     }
     
-    public float consultarSaldo (String tarjeta){
-        Conector conector = new Conector();
-        Cuenta c = new Cuenta();
-        float saldo=0;
-        
-        String conocerSaldo = "select saldo from tarjeta inner join cuenta on cuenta.numero = tarjeta.numero_cuenta "
-                + "where tarjeta.numero = '"+ tarjeta +"'";
-        
-        PreparedStatement ps = null;
-        ResultSet rs = null;
-        Connection con = conector.conectar();
-        
-        try{
-            ps = con.prepareStatement(conocerSaldo);
-            rs = ps.executeQuery();
-            if(rs.next()){
-                saldo=rs.getFloat(1);
-            }
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-        
-        return saldo;
+    public float consultarSaldo (String tarjeta){    
+        return c.getSaldo(tarjeta);
+    }
+    
+    public void ingreso (float importe){
+        c.actualizarSaldo(importe, true);
+    }
+    
+    public void reintegro (float importe){
+        c.actualizarSaldo(importe, false);
     }
 }

@@ -139,11 +139,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="REINTEGRO"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonReintegroActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="buttonIngreso">
           <Properties>
             <Property name="text" type="java.lang.String" value="INGRESO"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonIngresoActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

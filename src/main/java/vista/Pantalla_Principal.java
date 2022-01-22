@@ -1,19 +1,18 @@
 package vista;
 
 import javax.swing.ImageIcon;
+import codigo.GuardarDatos;
 
 public class Pantalla_Principal extends javax.swing.JFrame {
-    String tarjeta;
-
-    public Pantalla_Principal(String tarjeta) {
-        this.tarjeta = tarjeta;
+    GuardarDatos g = new GuardarDatos();
+    Consultar_Saldo c = new Consultar_Saldo();
+    Ingreso i = new Ingreso ();
+    Reintegro r = new Reintegro();
+ 
+    public Pantalla_Principal() {
         initComponents();
         setLocationRelativeTo(null);
         logo.setIcon(new ImageIcon("..\\Cajero_Cliente\\Imagenes\\logoPequenno.png"));
-    }
-
-    private Pantalla_Principal() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @SuppressWarnings("unchecked")
@@ -51,8 +50,18 @@ public class Pantalla_Principal extends javax.swing.JFrame {
         });
 
         buttonReintegro.setText("REINTEGRO");
+        buttonReintegro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonReintegroActionPerformed(evt);
+            }
+        });
 
         buttonIngreso.setText("INGRESO");
+        buttonIngreso.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonIngresoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -114,11 +123,23 @@ public class Pantalla_Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConsultarActionPerformed
-        Consultar_Saldo c = new Consultar_Saldo(tarjeta);
-                c.setDefaultCloseOperation(c.EXIT_ON_CLOSE);
-                c.setVisible(true);
-                this.setVisible(false);
+        c.ssaldo();
+        c.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
+        c.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_buttonConsultarActionPerformed
+
+    private void buttonIngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIngresoActionPerformed
+        i.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
+        i.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_buttonIngresoActionPerformed
+
+    private void buttonReintegroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonReintegroActionPerformed
+        r.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
+        r.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_buttonReintegroActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

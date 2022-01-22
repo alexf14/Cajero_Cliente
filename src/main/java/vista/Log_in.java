@@ -6,15 +6,18 @@ import java.util.TimerTask;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import java.util.Timer;
-import codigo.Cuenta;
+import codigo.GuardarDatos;
+import codigo.Tarjeta;
 
 public class Log_in extends javax.swing.JFrame {
-    codigo.Tarjeta t = new codigo.Tarjeta();
+    Tarjeta t = new Tarjeta();
+    Pantalla_Principal p = new Pantalla_Principal();
+    GuardarDatos g = new GuardarDatos();
 
     public Log_in() {
         initComponents();
         setLocationRelativeTo(null);        
-        logo.setIcon(new ImageIcon("..\\Cajero_Cliente\\Imagenes\\logo.png"));
+        logo.setIcon(new ImageIcon("..\\Cajero_Cliente\\Imagenes\\logo.png"));      
         
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("uuuu/MM/uuuu HH:mm:ss");   
         Timer temporizador = new Timer();
@@ -24,8 +27,7 @@ public class Log_in extends javax.swing.JFrame {
                 hora.setText(dtf.format(ZonedDateTime.now()));
             }
         },0, 1000);
-    }
-    
+    }  
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -183,7 +185,7 @@ public class Log_in extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, " Rellena todos los campos para poder iniciar sesión");
         }else{
             if(t.validar(txtNumeroTarjeta.getText(), txtCvs.getText(), pinPass.getText(), txtFechaCaducidad.getText()) == true){
-                Pantalla_Principal p = new Pantalla_Principal(txtNumeroTarjeta.getText());
+                g.setnTarjeta(txtNumeroTarjeta.getText());
                 p.setDefaultCloseOperation(p.EXIT_ON_CLOSE);
                 p.setVisible(true);
                 this.setVisible(false);

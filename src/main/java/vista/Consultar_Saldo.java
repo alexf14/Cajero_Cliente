@@ -2,20 +2,22 @@ package vista;
 
 import javax.swing.ImageIcon;
 import codigo.Tarjeta;
+import codigo.GuardarDatos;
 
 public class Consultar_Saldo extends javax.swing.JFrame {
-        String nTarjeta;
-    public Consultar_Saldo(String nTarjeta) {
-        Tarjeta t = new Tarjeta();
-        this.nTarjeta = nTarjeta;
+    GuardarDatos g = new GuardarDatos();
+    Tarjeta t = new Tarjeta();
+//    Pantalla_Principal p = new Pantalla_Principal ();
+    
+    public Consultar_Saldo() {
         initComponents();
+        saldo.setText(t.consultarSaldo(g.getnTarjeta())+"");
         setLocationRelativeTo(null);  
-        logo.setIcon(new ImageIcon("..\\Cajero_Cliente\\Imagenes\\logoPequenno.png"));
-        saldo.setText(t.consultarSaldo(nTarjeta)+""); 
+        logo.setIcon(new ImageIcon("..\\Cajero_Cliente\\Imagenes\\logoPequenno.png"));       
     }
-
-    private Consultar_Saldo() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    public void ssaldo (){
+        saldo.setText(t.consultarSaldo(g.getnTarjeta())+"");
     }
 
     @SuppressWarnings("unchecked")
