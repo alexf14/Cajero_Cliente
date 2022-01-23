@@ -8,6 +8,7 @@ public class Ingreso extends javax.swing.JFrame {
     
     public Ingreso() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     @SuppressWarnings("unchecked")
@@ -113,8 +114,8 @@ public class Ingreso extends javax.swing.JFrame {
 
     private void cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarActionPerformed
        /* p.setDefaultCloseOperation(Ingreso.EXIT_ON_CLOSE);
-        p.setVisible(true);
-        this.setVisible(false);*/
+        p.setVisible(true);*/
+        this.setVisible(false);
     }//GEN-LAST:event_cancelarActionPerformed
 
     public static void main(String args[]) {

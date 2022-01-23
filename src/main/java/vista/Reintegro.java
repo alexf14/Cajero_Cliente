@@ -9,6 +9,7 @@ public class Reintegro extends javax.swing.JFrame {
     
     public Reintegro() {
         initComponents();
+        setLocationRelativeTo(null);
         logo.setIcon(new ImageIcon("..\\Cajero_Cliente\\Imagenes\\logoPequenno.png"));
     }
 
@@ -122,8 +123,8 @@ public class Reintegro extends javax.swing.JFrame {
 
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
         /*p.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
-        p.setVisible(true);
-        this.setVisible(false);*/
+        p.setVisible(true);*/
+        this.setVisible(false);
     }//GEN-LAST:event_volverActionPerformed
 
     public static void main(String args[]) {

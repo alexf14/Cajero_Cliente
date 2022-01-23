@@ -7,7 +7,7 @@ import codigo.GuardarDatos;
 public class Consultar_Saldo extends javax.swing.JFrame {
     GuardarDatos g = new GuardarDatos();
     Tarjeta t = new Tarjeta();
-//    Pantalla_Principal p = new Pantalla_Principal ();
+    //Pantalla_Principal p = new Pantalla_Principal ();
     
     public Consultar_Saldo() {
         initComponents();
@@ -52,6 +52,11 @@ public class Consultar_Saldo extends javax.swing.JFrame {
         saldo.setForeground(new java.awt.Color(0, 0, 0));
 
         jButton1.setText("Volver");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         logo.setIcon(new ImageIcon("..\\Cajero_Cliente\\Imagenes\\logoPequenno.png"));
 
@@ -112,6 +117,12 @@ public class Consultar_Saldo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        /*p.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
+        p.setVisible(true);*/
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {

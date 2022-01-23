@@ -124,21 +124,21 @@ public class Pantalla_Principal extends javax.swing.JFrame {
 
     private void buttonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonConsultarActionPerformed
         c.ssaldo();
-        c.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
+        //c.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
         c.setVisible(true);
-        this.setVisible(false);
+        //this.setVisible(false);
     }//GEN-LAST:event_buttonConsultarActionPerformed
 
     private void buttonIngresoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonIngresoActionPerformed
-        i.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
+        //i.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
         i.setVisible(true);
-        this.setVisible(false);
+        //this.setVisible(false);
     }//GEN-LAST:event_buttonIngresoActionPerformed
 
     private void buttonReintegroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonReintegroActionPerformed
-        r.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
+        //r.setDefaultCloseOperation(this.EXIT_ON_CLOSE);
         r.setVisible(true);
-        this.setVisible(false);
+        //this.setVisible(false);
     }//GEN-LAST:event_buttonReintegroActionPerformed
 
     public static void main(String args[]) {
